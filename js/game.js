@@ -7,7 +7,9 @@ let modoAtual = 'basico';
 function iniciarJogo(modo) {
     modoAtual = modo;
     document.getElementById("area-jogo").style.display = "block";
+    novaPergunta();
 }
+
 // Função que gera nova pergunta e mostra na tela
 function novaPergunta() {
     const numeros = gerarNumeros(modoAtual);
@@ -54,10 +56,10 @@ function verificarResposta() {
     const respostaUsuario = parseInt(document.getElementById("resposta").value);
 
     if (respostaUsuario === respostaCorreta) {
-        document.getElementById("resultado").innerText = "✔ Resposta Correta!";
+        document.getElementById("resultado").innerText = "Resposta Correta!";
         pontuacao += 10;
         } else {
-        document.getElementById("resultado").innerText = "❌ Errado! A resposta era ${respostaCorreta}";
+        document.getElementById("resultado").innerText = "Errado! A resposta era ${respostaCorreta}";
         pontuacao -= 5;
         }
 
